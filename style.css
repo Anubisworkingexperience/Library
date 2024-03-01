@@ -1,5 +1,6 @@
 * {
     font-family: "Montserrat", sans-serif;
+    /* border: 2px solid red; */
 }
 
 body {
@@ -13,6 +14,7 @@ main {
     background-image: url(./images/background.jpeg);
     background-repeat: repeat-x;
     background-size: cover;
+    padding-top: 30px;
 }
 
 footer {
@@ -40,3 +42,86 @@ header {
     align-items: center;
     gap: 10px;
 }
+
+.add, main h1 {
+    text-align: center;
+    color: white;
+}
+
+.add {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.add-container {
+    text-align: center;
+}
+
+.add:hover {
+    color: rgb(212, 208, 208);
+}
+
+main h1 {
+    font-size: 3rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: white;
+}
+
+dialog {
+    background-color:rgb(206, 185, 159);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: bisque;
+    padding: 20px;
+}
+
+::backdrop {
+    opacity: 0.5;
+}
+
+.content > h2 {
+    text-decoration: black dotted underline;
+}
+
+.content p {
+    margin: 0;
+}
+
+.read {
+    display: flex;
+    gap: 10px;
+}
+
+button[type="submit"] {
+    color: white;
+    background-color: rgb(46, 137, 106);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(59, 172, 134);
+}
+
+.content > div {
+    display: flex;
+    gap: 15px;
+}
+
+
