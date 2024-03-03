@@ -25,21 +25,21 @@
             <dialog>
                 <div class="content">
                     <h2>New book</h2>
-                    <div class="title">
-                        <label for="book_title">Title: </label>
-                        <input type="text" name="title" id="book_title" placeholder="The Hobbit">
-                    </div>
-                    <div class="author">
-                        <label for="book_author">Author: </label>
-                        <input type="text" name="author" id="book_author" placeholder="J.R.R Tolkien">
-                    </div>
-                    <div class="pages">
-                        <label for="numPages">Pages: </label>
-                        <input type="number" name="pages" id="numPages" placeholder="320">
+                    <div class="forms">
+                                <div class="title-container">
+                                    <input type="text" name="title" id="book_title" placeholder="Title" class="title">
+                                </div>
+
+                                <div class="author-container">
+                                    <input type="text" name="author" id="book_author" placeholder="Author" class="author">
+                                </div>
+                                <div class="pages-container">
+                                    <input type="number" name="pages" id="numPages" placeholder="Pages" class="pages">
+                                </div>
                     </div>
                     <div class="read">
                         <p>Have you read it?</p>
-                        <input type="checkbox" name="read">
+                        <input type="checkbox" name="read" class="read-checkbox">
                     </div>
                     <button type="submit">Submit</button>
                 </div>
