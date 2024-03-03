@@ -24,24 +24,19 @@
             <span class="add">+ Add book</span>
             <dialog>
                 <div class="content">
-                    <h2 class="modal">New book</h2>
-                    <div class="forms">
-                                <div class="title-container">
-                                    <input type="text" name="title" id="book_title" placeholder="Title" class="title modal">
-                                </div>
-
-                                <div class="author-container">
-                                    <input type="text" name="author" id="book_author" placeholder="Author" class="author modal">
-                                </div>
-                                <div class="pages-container">
-                                    <input type="number" name="pages" id="numPages" placeholder="Pages" class="pages modal">
-                                </div>
-                    </div>
-                    <div class="read">
-                        <p class="modal">Have you read it?</p>
-                        <input type="checkbox" name="read" class="read-checkbox modal">
-                    </div>
-                    <button type="submit" class="modal">Submit</button>
+                    <form action="#">
+                        <h2 class="modal">New book</h2>
+                        <div class="forms">
+                                <input type="text" name="title" id="book_title" placeholder="Title" class="title modal" required/>
+                                <input type="text" name="author" id="book_author" placeholder="Author" class="author modal" required maxlength="50" pattern="^[a-zA-Z ]*$"/>
+                                <input type="number" name="pages" id="numPages" placeholder="Pages" class="pages modal" required max="11000"/>
+                        </div>
+                        <div class="read">
+                            <p class="modal">Have you read it?</p>
+                            <input type="checkbox" name="read" class="read-checkbox modal">
+                        </div>
+                        <button type="submit" class="modal">Submit</button>
+                    </form>
                 </div>
             </dialog>
         </div>

@@ -80,7 +80,7 @@ dialog {
     border-radius: 10px;
 }
 
-.content {
+.content form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +94,7 @@ dialog {
     opacity: 0.5;
 }
 
-.content > h2 {
+.content h2 {
     text-decoration: black dotted underline;
 }
 
