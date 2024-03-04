@@ -60,16 +60,63 @@ function addBookToLibrary() {
         console.log(myLibrary);
         dialog.close();
 
+        //adding cards on the screen
+        showBookCards();
+
         //resetting forms before reopening
         title.value = '';
         author.value = '';
         pages.value = '';
         isRead.checked = false;
 
-        //preventing sending data to server default behavior
+        //prevent sending data to server default behavior
         event.preventDefault();
     });
 }
 
 addBookToLibrary();
+
+function showBookCards() {
+    const cardContainer = document.querySelector('.card-container');
+
+    myLibrary.forEach(book => {
+        let card = document.createElement('div');
+        card.classList.add('card');
+
+        //card content
+        let cardTitle = document.createElement('div');
+        cardTitle.textContent = `"${book.title}"`;
+        card.appendChild(cardTitle);
+
+        let cardAuthor = document.createElement('div');
+        cardAuthor.textContent = book.author;
+        card.appendChild(cardAuthor);
+
+        let cardPages = document.createElement('div');
+        cardPages.textContent = `${book.numberOfPages} pages`;
+        card.appendChild(cardPages);
+
+        let cardRead = document.createElement('div');
+        cardRead.classList.add('card-read');
+        switch(book.isRead) {
+            case true:
+                cardRead.classList.add('card-read');
+                cardRead.textContent = 'Read';
+                break;
+            case false:
+                cardRead.classList.add('card-notRead');
+                cardRead.textContent = 'Not read';
+                break;
+        }
+
+        card.appendChild(cardRead);
+
+        let cardRemove = document.createElement('div');
+        cardRemove.classList.add('card-remove');
+        cardRemove.textContent = 'Remove';
+        card.appendChild(cardRemove);
+
+        cardContainer.appendChild(card);
+    });
+}
 
