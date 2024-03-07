@@ -107,14 +107,6 @@ main h1 {
 
 /* not read styles: */
 
-.card-notRead {
-    background-color: rgb(252, 148, 148);
-}
-
-.card-notRead:hover {
-    background-color: rgb(247, 125, 125);
-}
-
 /* read styles */
 
 .card-read {
@@ -125,6 +117,13 @@ main h1 {
     background-color: rgb(113, 223, 113);
 }
 
+.card-notRead {
+    background-color: rgb(252, 148, 148);
+}
+
+.card-notRead:hover {
+    background-color: rgb(247, 125, 125);
+}
 /* card styles end here */
 
 dialog {
