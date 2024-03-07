@@ -83,7 +83,7 @@ function addBookToLibrary() {
             card.appendChild(cardPages);
 
             let cardRead = document.createElement('div');
-            cardRead.classList.add('card-read');
+
             switch(myLibrary[i].isRead) {
                 case true:
                     cardRead.classList.add('card-read');
@@ -92,10 +92,23 @@ function addBookToLibrary() {
                 case false:
                     cardRead.classList.add('card-notRead');
                     cardRead.textContent = 'Not read';
-                    break;
             }
 
             card.appendChild(cardRead);
+
+            //change book status
+            cardRead.addEventListener('click', () => {
+                if (cardRead.classList.contains('card-read')) {
+                    cardRead.classList.remove('card-read');
+                    cardRead.classList.add('card-notRead');
+                    cardRead.textContent = 'Not read';
+                }
+                else {
+                    cardRead.classList.remove('card-notRead');
+                    cardRead.classList.add('card-read');
+                    cardRead.textContent = 'Read';
+                }
+            });
 
             let cardRemove = document.createElement('div');
             cardRemove.classList.add('card-remove');
