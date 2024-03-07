@@ -64,50 +64,50 @@ function addBookToLibrary() {
         //adding cards on the screen
         const cardContainer = document.querySelector('.card-container');
 
-    for (let i = submitCount; i < myLibrary.length; i++) {
-        let card = document.createElement('div');
-        card.classList.add('card');
-        card.classList.add(`card${i}`);
+        for (let i = submitCount; i < myLibrary.length; i++) {
+            let card = document.createElement('div');
+            card.classList.add('card');
+            card.classList.add(`card${i}`);
 
-        //card content
-        let cardTitle = document.createElement('div');
-        cardTitle.textContent = `"${myLibrary[i].title}"`;
-        card.appendChild(cardTitle);
+            //card content
+            let cardTitle = document.createElement('div');
+            cardTitle.textContent = `"${myLibrary[i].title}"`;
+            card.appendChild(cardTitle);
 
-        let cardAuthor = document.createElement('div');
-        cardAuthor.textContent = myLibrary[i].author;
-        card.appendChild(cardAuthor);
+            let cardAuthor = document.createElement('div');
+            cardAuthor.textContent = myLibrary[i].author;
+            card.appendChild(cardAuthor);
 
-        let cardPages = document.createElement('div');
-        cardPages.textContent = `${myLibrary[i].numberOfPages} pages`;
-        card.appendChild(cardPages);
+            let cardPages = document.createElement('div');
+            cardPages.textContent = `${myLibrary[i].numberOfPages} pages`;
+            card.appendChild(cardPages);
 
-        let cardRead = document.createElement('div');
-        cardRead.classList.add('card-read');
-        switch(myLibrary[i].isRead) {
-            case true:
-                cardRead.classList.add('card-read');
-                cardRead.textContent = 'Read';
-                break;
-            case false:
-                cardRead.classList.add('card-notRead');
-                cardRead.textContent = 'Not read';
-                break;
+            let cardRead = document.createElement('div');
+            cardRead.classList.add('card-read');
+            switch(myLibrary[i].isRead) {
+                case true:
+                    cardRead.classList.add('card-read');
+                    cardRead.textContent = 'Read';
+                    break;
+                case false:
+                    cardRead.classList.add('card-notRead');
+                    cardRead.textContent = 'Not read';
+                    break;
+            }
+
+            card.appendChild(cardRead);
+
+            let cardRemove = document.createElement('div');
+            cardRemove.classList.add('card-remove');
+            cardRemove.textContent = 'Remove';
+            card.appendChild(cardRemove);
+
+            cardRemove.addEventListener('click' , (e) => {
+                cardContainer.removeChild(card);
+            });
+
+                cardContainer.appendChild(card);
         }
-
-        card.appendChild(cardRead);
-
-        let cardRemove = document.createElement('div');
-        cardRemove.classList.add('card-remove');
-        cardRemove.textContent = 'Remove';
-        card.appendChild(cardRemove);
-
-        cardRemove.addEventListener('click' , (e) => {
-            cardContainer.removeChild(card);
-        });
-
-            cardContainer.appendChild(card);
-    }
 
         //resetting forms before reopening
         title.value = '';
@@ -124,53 +124,4 @@ function addBookToLibrary() {
 
 addBookToLibrary();
 
-// function showBookCards() {
-    // const cardContainer = document.querySelector('.card-container');
-
-    // for (let i = submitCount - 1; i < myLibrary.length; i++) {
-    //     let card = document.createElement('div');
-    //     card.classList.add('card');
-    //     card.classList.add(`card${i}`);
-
-    //     //card content
-    //     let cardTitle = document.createElement('div');
-    //     cardTitle.textContent = `"${myLibrary[i].title}"`;
-    //     card.appendChild(cardTitle);
-
-    //     let cardAuthor = document.createElement('div');
-    //     cardAuthor.textContent = myLibrary[i].author;
-    //     card.appendChild(cardAuthor);
-
-    //     let cardPages = document.createElement('div');
-    //     cardPages.textContent = `${myLibrary[i].numberOfPages} pages`;
-    //     card.appendChild(cardPages);
-
-    //     let cardRead = document.createElement('div');
-    //     cardRead.classList.add('card-read');
-    //     switch(myLibrary[i].isRead) {
-    //         case true:
-    //             cardRead.classList.add('card-read');
-    //             cardRead.textContent = 'Read';
-    //             break;
-    //         case false:
-    //             cardRead.classList.add('card-notRead');
-    //             cardRead.textContent = 'Not read';
-    //             break;
-    //     }
-
-    //     card.appendChild(cardRead);
-
-    //     let cardRemove = document.createElement('div');
-    //     cardRemove.classList.add('card-remove');
-    //     cardRemove.textContent = 'Remove';
-    //     card.appendChild(cardRemove);
-
-    //     cardRemove.addEventListener('click' , (e) => {
-    //         cardContainer.removeChild(card);
-    //     });
-
-    //         cardContainer.appendChild(card);
-    // }
-            
-// }
 

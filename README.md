@@ -1,7 +1,7 @@
 # Library
 
 # TODO
-1. Fix adding existing elements to book container
-2. Fix Not read background color bug
-3. Remove card button
-4. Change read status button
+1. Clean code improvements (cause this idiot javascript didn't let me use
+my function without using asynch js)
+2. Change read status button
+3. Prevent creating book with the same title
