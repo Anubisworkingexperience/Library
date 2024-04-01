@@ -26,11 +26,13 @@ modalBox();
 
 const myLibrary = [];
 
-function Book(title, author, numberOfPages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.numberOfPages = numberOfPages;
-    this.isRead = isRead;
+class Book {
+    constructor(title, author, numberOfPages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.isRead = isRead;
+    }
 }
 
 function addBookToLibrary() {
@@ -61,7 +63,7 @@ function addBookToLibrary() {
         console.log(myLibrary);
         dialog.close();
 
-        //adding cards on the screen
+        //adding cards to the screen
         const cardContainer = document.querySelector('.card-container');
 
         for (let i = submitCount; i < myLibrary.length; i++) {
@@ -110,6 +112,7 @@ function addBookToLibrary() {
                 }
             });
 
+            //remove book button
             let cardRemove = document.createElement('div');
             cardRemove.classList.add('card-remove');
             cardRemove.textContent = 'Remove';
@@ -117,6 +120,8 @@ function addBookToLibrary() {
 
             cardRemove.addEventListener('click' , (e) => {
                 cardContainer.removeChild(card);
+                // myLibrary.splice(i, 1);
+                console.log(myLibrary);
             });
 
                 cardContainer.appendChild(card);
